@@ -7,7 +7,7 @@
 #替换密码
 #sed "s%\"rpc-password\": \".*%\"rpc-password\": \"${PASSWORD}\",%g" /root/.config/transmission-daemon/settings.json
 #修改配置问文件
-sed "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
+sed -i "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
 #清空日志
 echo '' > /var/log/transmission/transmission.log
 #启动服务
