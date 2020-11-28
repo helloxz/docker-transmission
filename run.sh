@@ -6,6 +6,8 @@
 #sed  "s%\"rpc-username\": \"xiaoz\"%\"rpc-username\": \"${USERNAME}\"%g" /root/.config/transmission-daemon/settings.json
 #替换密码
 #sed "s%\"rpc-password\": \".*%\"rpc-password\": \"${PASSWORD}\",%g" /root/.config/transmission-daemon/settings.json
+#修改配置问文件
+sed "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
 #清空日志
 echo '' > /var/log/transmission/transmission.log
 #启动服务
