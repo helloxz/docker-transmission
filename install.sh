@@ -24,3 +24,12 @@ wget https://github.com/ronggang/transmission-web-control/raw/master/release/ins
 chmod +x install-tr-control-cn.sh
 sh install-tr-control-cn.sh
 
+#初始化任务
+/usr/bin/transmission-daemon
+#延长20s
+sleep 20s
+#杀死任务
+pkill transmission-daemon
+echo '-----------------------------'
+echo 'The installation is complete.'
+echo '-----------------------------'
