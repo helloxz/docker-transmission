@@ -27,9 +27,13 @@ sh install-tr-control-cn.sh
 #初始化任务
 /usr/bin/transmission-daemon
 #延长20s
-sleep 20s
+sleep 10s
 #杀死任务
 pkill transmission-daemon
+#修改配置问文件
+sed -i "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
+sed -i "s%\"rpc-whitelist-enabled\": true%\"rpc-whitelist-enabled\": false%g" /root/.config/transmission-daemon/settings.json
+
 echo '-----------------------------'
 echo 'The installation is complete.'
 echo '-----------------------------'
