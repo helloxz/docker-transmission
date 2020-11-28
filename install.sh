@@ -5,7 +5,7 @@ apk update
 #进入root目录
 cd /root
 #安装所需软件
-apk add curl wget transmission-daemon
+apk add wget transmission-daemon
 
 #安装timezone
 apk add -U tzdata
@@ -17,6 +17,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 date
 #为了精简镜像，可以将tzdata删除了
 apk del tzdata
+apk del wget
 
 #安装transmission美化
 cd /root
@@ -33,7 +34,7 @@ pkill transmission-daemon
 #修改配置问文件
 sed -i "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
 sed -i "s%\"rpc-whitelist-enabled\": true%\"rpc-whitelist-enabled\": false%g" /root/.config/transmission-daemon/settings.json
-
+sed -i "s%\"rpc-authentication-required\": false%\"rpc-authentication-required\": true%g" /root/.config/transmission-daemon/settings.json
 echo '-----------------------------'
 echo 'The installation is complete.'
 echo '-----------------------------'
