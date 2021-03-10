@@ -35,6 +35,7 @@ pkill transmission-daemon
 sed -i "s%\"rpc-whitelist\": \"127.0.0.1,::1\"%\"rpc-whitelist\": \"0.0.0.0\"%g" /root/.config/transmission-daemon/settings.json
 sed -i "s%\"rpc-whitelist-enabled\": true%\"rpc-whitelist-enabled\": false%g" /root/.config/transmission-daemon/settings.json
 sed -i "s%\"rpc-authentication-required\": false%\"rpc-authentication-required\": true%g" /root/.config/transmission-daemon/settings.json
+sed -i "s%\"cache-size-mb\": 4%\"cache-size-mb\": 64%g" /root/.config/transmission-daemon/settings.json
 echo '-----------------------------'
 echo 'The installation is complete.'
 echo '-----------------------------'
