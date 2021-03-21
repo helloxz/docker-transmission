@@ -41,16 +41,18 @@ docker run -d --name="transmission" \
   -p 9091:9091 \
   -p 51413:51413 \
   -p 51413:51413/udp \
-  -v /data/test:/root/Downloads \
+  -v /data/downloads:/root/Downloads \
+  -v /data/transmission:/root/.config/transmission-daemon \
   --restart=always \
   helloz/transmission
 ```
 
 **参数说明：**
 
-- USERNAME: Transmission 用户名
-- PASSWORD: Transmission密码
-- /data/test: 为本地下载文件夹，请根据实际情况修改
+- `USERNAME`: Transmission 用户名
+- `PASSWORD`: Transmission密码
+- `/data/downloads`: 为本地下载文件夹，请根据实际情况修改
+- `/data/transmission`: 配置文件等存储目录，请根据实际情况修改
 
 ### 联系我
 
