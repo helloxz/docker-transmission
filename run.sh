@@ -10,7 +10,7 @@ then
 	#查看日志
 	tail -f /root/.config/transmission-daemon/transmission.log
 else
-	mv -r /root/.config/transmission-daemon.bak /root/.config/transmission-daemon
+	mv -f /root/.config/transmission-daemon.bak /root/.config/transmission-daemon
 	#清空日志
 	echo '' > /root/.config/transmission-daemon/transmission.log
 	#启动服务
