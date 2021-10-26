@@ -5,7 +5,7 @@ apk update
 #进入root目录
 cd /root
 #安装所需软件
-apk add wget transmission-daemon
+apk add wget transmission-daemon transmission-cli
 
 #安装timezone
 apk add -U tzdata
